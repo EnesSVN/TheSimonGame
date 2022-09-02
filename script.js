@@ -27,6 +27,12 @@ $(".btn").click(function () {
   checkAnswer(userClickedPattern.length - 1);
 });
 
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
+
 function nextSequence() {
   userClickedPattern = [];
 
@@ -78,5 +84,7 @@ function checkAnswer(currentLevel) {
     }, 200);
 
     $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    startOver();
   }
 }
